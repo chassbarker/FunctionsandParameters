@@ -1,36 +1,35 @@
-// Create a function that takes parameters and returns a value
+// Function to calculate the area
 function calculateArea(width, height) {
     return width * height;
 }
 
-// Pass parameters into the function
+// Invoke function and display the area
 let width = 5;
 let height = 10;
-
-// Invoke the function and pass the parameters out (get the return value)
 let area = calculateArea(width, height);
-console.log("The area is: " + area); // The area is: 50
+document.getElementById("area").innerHTML = "The area is: " + area;
 
-// Create an object with multiple properties and methods
+// Create an object with properties and methods
 let rectangle = {
     width: 5,
     height: 10,
     color: "blue",
     // Method to calculate the area
-    calculateArea: function() {
+    calculateArea: function () {
         return this.width * this.height;
     },
     // Method to change the color
-    changeColor: function(newColor) {
+    changeColor: function (newColor) {
         this.color = newColor;
     }
 };
 
-// Access object properties and invoke methods
-console.log("Rectangle Area: " + rectangle.calculateArea()); // Rectangle Area: 50
-console.log("Rectangle Color: " + rectangle.color); // Rectangle Color: blue
+// Display initial color
+document.getElementById("color").innerHTML = "Initial Rectangle Color: " + rectangle.color;
 
-// Event simulation (changing color of the rectangle)
-rectangle.changeColor("green");
-console.log("New Rectangle Color: " + rectangle.color); // New Rectangle Color: green
+// Function to change the rectangle color on button click (event)
+function changeRectangleColor() {
+    rectangle.changeColor("green");
+    document.getElementById("color").innerHTML = "New Rectangle Color: " + rectangle.color;
+}
 
